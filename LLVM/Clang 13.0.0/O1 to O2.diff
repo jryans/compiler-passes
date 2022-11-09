@@ -1,0 +1,28 @@
+diff --git a/O1.md b/O2.md
+index fa2a881..6376702 100644
+--- a/O1.md
++++ b/O2.md
+@@ -22,0 +23 @@ PostOrderFunctionAttrsPass on (example)
++OpenMPOptCGSCCPass on (example)
+@@ -24,0 +26,3 @@ EarlyCSEPass on example
++SpeculativeExecutionPass on example
++JumpThreadingPass on example
++CorrelatedValuePropagationPass on example
+@@ -27,0 +32 @@ LibCallsShrinkWrapPass on example
++TailCallElimPass on example
+@@ -38 +43,2 @@ SROA on example
+-MemCpyOptPass on example
++MergedLoadStoreMotionPass on example
++GVN on example
+@@ -42 +48,2 @@ InstCombinePass on example
+-CoroElidePass on example
++JumpThreadingPass on example
++CorrelatedValuePropagationPass on example
+@@ -43,0 +51,5 @@ ADCEPass on example
++MemCpyOptPass on example
++DSEPass on example
++LoopSimplifyPass on example
++LCSSAPass on example
++CoroElidePass on example
+@@ -61,0 +74 @@ SimplifyCFGPass on example
++SLPVectorizerPass on example

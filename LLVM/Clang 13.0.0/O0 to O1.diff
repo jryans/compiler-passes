@@ -1,0 +1,163 @@
+diff --git a/O0.md b/O1.md
+index 3c7ef62..fa2a881 100644
+--- a/O0.md
++++ b/O1.md
+@@ -1 +1,7 @@
+-AlwaysInlinerPass on [module]
++Annotation2MetadataPass on [module]
++ForceFunctionAttrsPass on [module]
++InferFunctionAttrsPass on [module]
++LowerExpectIntrinsicPass on example
++SimplifyCFGPass on example
++SROA on example
++EarlyCSEPass on example
+@@ -2,0 +9,37 @@ CoroEarlyPass on example
++OpenMPOptPass on [module]
++IPSCCPPass on [module]
++CalledValuePropagationPass on [module]
++GlobalOptPass on [module]
++PromotePass on example
++DeadArgumentEliminationPass on [module]
++InstCombinePass on example
++SimplifyCFGPass on example
++RequireAnalysisPass<llvm::GlobalsAA, llvm::Module> on [module]
++InvalidateAnalysisPass<llvm::AAManager> on example
++RequireAnalysisPass<llvm::ProfileSummaryAnalysis, llvm::Module> on [module]
++InlinerPass on (example)
++InlinerPass on (example)
++PostOrderFunctionAttrsPass on (example)
++SROA on example
++EarlyCSEPass on example
++SimplifyCFGPass on example
++InstCombinePass on example
++LibCallsShrinkWrapPass on example
++SimplifyCFGPass on example
++ReassociatePass on example
++RequireAnalysisPass<llvm::OptimizationRemarkEmitterAnalysis, llvm::Function> on example
++LoopSimplifyPass on example
++LCSSAPass on example
++SimplifyCFGPass on example
++InstCombinePass on example
++LoopSimplifyPass on example
++LCSSAPass on example
++SROA on example
++MemCpyOptPass on example
++SCCPPass on example
++BDCEPass on example
++InstCombinePass on example
++CoroElidePass on example
++ADCEPass on example
++SimplifyCFGPass on example
++InstCombinePass on example
+@@ -3,0 +47,28 @@ CoroSplitPass on (example)
++GlobalOptPass on [module]
++GlobalDCEPass on [module]
++EliminateAvailableExternallyPass on [module]
++ReversePostOrderFunctionAttrsPass on [module]
++RequireAnalysisPass<llvm::GlobalsAA, llvm::Module> on [module]
++Float2IntPass on example
++LowerConstantIntrinsicsPass on example
++LoopSimplifyPass on example
++LCSSAPass on example
++LoopDistributePass on example
++InjectTLIMappings on example
++LoopVectorizePass on example
++LoopLoadEliminationPass on example
++InstCombinePass on example
++SimplifyCFGPass on example
++VectorCombinePass on example
++InstCombinePass on example
++LoopUnrollPass on example
++WarnMissedTransformationsPass on example
++InstCombinePass on example
++RequireAnalysisPass<llvm::OptimizationRemarkEmitterAnalysis, llvm::Function> on example
++LoopSimplifyPass on example
++LCSSAPass on example
++AlignmentFromAssumptionsPass on example
++LoopSinkPass on example
++InstSimplifyPass on example
++DivRemPairsPass on example
++SimplifyCFGPass on example
+@@ -4,0 +76,6 @@ CoroCleanupPass on example
++CGProfilePass on [module]
++GlobalDCEPass on [module]
++ConstantMergePass on [module]
++RelLookupTableConverterPass on [module]
++AnnotationRemarksPass on example
++ObjC ARC contraction (objc-arc-contract)
+@@ -9 +86,3 @@ Lower AMX type for load/store (lower-amx-type)
+-Pre AMX Tile Config (pre-amx-config)
++Canonicalize natural loops (loop-simplify)
++Merge contiguous icmps into a memcmp (mergeicmps)
++Expand memcmp() to load/stores (expandmemcmp)
+@@ -13,0 +93,3 @@ Remove unreachable blocks from the CFG (unreachableblockelim)
++Constant Hoisting (consthoist)
++Replace intrinsics with calls to vector library (replace-with-veclib)
++Partially inline calls to library functions (partially-inline-libcalls)
+@@ -16,0 +99,2 @@ Expand reduction intrinsics (expand-reductions)
++Interleaved Access Pass (interleaved-access)
++X86 Partial Reduction (x86-partial-reduction)
+@@ -17,0 +102 @@ Expand indirectbr instructions (indirectbr-expand)
++CodeGen Prepare (codegenprepare)
+@@ -21,0 +107,5 @@ Finalize ISel and expand pseudo-instructions (finalize-isel)
++X86 Domain Reassignment Pass (x86-domain-reassignment)
++Early Tail Duplication (early-tailduplication)
++Optimize machine instruction PHIs (opt-phis)
++Slot index numbering (slotindexes)
++Merge disjoint stack slots (stack-coloring)
+@@ -22,0 +113,14 @@ Local Stack Slot Allocation (localstackalloc)
++Remove dead machine instructions (dead-mi-elimination)
++Early If-Conversion (early-ifcvt)
++Machine InstCombiner (machine-combiner)
++X86 cmov Conversion (x86-cmov-conversion)
++Early Machine Loop Invariant Code Motion (early-machinelicm)
++Machine Common Subexpression Elimination (machine-cse)
++Machine code sinking (machine-sink)
++Peephole Optimizations (peephole-opt)
++Remove dead machine instructions (dead-mi-elimination)
++Live Range Shrink (lrshrink)
++X86 Fixup SetCC (x86-fixup-setcc)
++X86 LEA Optimize (x86-optimize-LEAs)
++X86 Optimize Call Frame (x86-cf-opt)
++X86 Avoid Store Forwarding Blocks (x86-avoid-SFB)
+@@ -24,0 +129,4 @@ X86 EFLAGS copy lowering (x86-flags-copy-lowering)
++Detect Dead Lanes (detect-dead-lanes)
++Process Implicit Definitions (processimpdefs)
++Remove unreachable machine basic blocks (unreachable-mbb-elimination)
++Live Variable Analysis (livevars)
+@@ -27,2 +135,15 @@ Two-Address instruction pass (twoaddressinstruction)
+-Fast Register Allocator (regallocfast)
+-Fast Tile Register Configure (fasttileconfig)
++Slot index numbering (slotindexes)
++Live Interval Analysis (liveintervals)
++Simple Register Coalescing (simple-register-coalescing)
++Rename Disconnected Subregister Components (rename-independent-subregs)
++Machine Instruction Scheduler (machine-scheduler)
++Debug Variable Analysis (livedebugvars)
++Live Stack Slot Analysis (livestacks)
++Virtual Register Map (virtregmap)
++Live Register Matrix (liveregmatrix)
++Greedy Register Allocator (greedy)
++Tile Register Configure (tileconfig)
++Virtual Register Rewriter (virtregrewriter)
++Stack Slot Coloring (stack-slot-coloring)
++Machine Copy Propagation Pass (machine-cp)
++Machine Loop Invariant Code Motion (machinelicm)
+@@ -30,0 +152 @@ X86 FP Stackifier (x86-codegen)
++X86 Load Value Injection (LVI) Load Hardening (x86-lvi-load)
+@@ -32,0 +155,2 @@ Fixup Statepoint Caller Saved (fixup-statepoint-caller-saved)
++PostRA Machine Sink (postra-machine-sink)
++Shrink Wrapping analysis (shrink-wrap)
+@@ -33,0 +158,3 @@ Prologue/Epilogue Insertion & Frame Finalization (prologepilog)
++Control Flow Optimizer (branch-folder)
++Tail Duplication (tailduplication)
++Machine Copy Propagation Pass (machine-cp)
+@@ -35,0 +163 @@ X86 pseudo instruction expansion pass (x86-pseudo)
++Post RA top-down list latency scheduler (post-RA-sched)
+@@ -36,0 +165 @@ Analyze Machine Code For Garbage Collection (gc-analysis)
++Branch Probability Basic Block Placement (block-placement)
+@@ -39,0 +169,4 @@ Implement the 'patchable-function' attribute (patchable-function)
++X86 Execution Dependency Fix (x86-execution-domain-fix)
++BreakFalseDeps (break-false-deps)
++X86 Byte/Word Instruction Fixup (x86-fixup-bw-insts)
++X86 LEA Fixup (x86-fixup-LEAs)

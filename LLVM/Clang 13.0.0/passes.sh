@@ -39,3 +39,9 @@ curl 'https://godbolt.org/api/compiler/cclang1300/compile' \
 jq -r '.llvmOptPipelineOutput.results.example | .[] | .name' \
 > \
 O3.md
+
+set +e
+git diff --no-index -U0 O0.md O1.md > 'O0 to O1.diff'
+git diff --no-index -U0 O1.md O2.md > 'O1 to O2.diff'
+git diff --no-index -U0 O2.md O3.md > 'O2 to O3.diff'
+set -e
